@@ -107,8 +107,9 @@ ActiveRecord::Schema.define(version: 20161203171208) do
 
   create_table "experiences", force: :cascade do |t|
     t.string  "name"
-    t.string  "description"
+    t.text    "description"
     t.boolean "is_persistent"
+    t.boolean "is_children_mutually_exclusive"
     t.integer "num_days"
     t.integer "how_often_change"
     t.integer "parent_id"

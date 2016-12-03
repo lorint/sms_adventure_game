@@ -15,7 +15,9 @@
 <br>
 Choose the parent you'd like your new <b>Experience</b> to have, and then:<br>
 Name: <%= f.text_field :name %><br>
+<%= f.text_area :description, {rows: 10, cols: 100} %><br>
 <%= f.check_box :is_persistent %>Is persistent (lasts for awhile, like getting a job or going to jail)<br>
+<%= f.check_box :is_children_mutually_exclusive %>Children are mutually exclusive<br>
 <table>
   <tr>
     <th></th><th>Change</th><th>Range</th>

@@ -2,10 +2,12 @@ class CreateExperiences < ActiveRecord::Migration[5.0]
   def change
     create_table :experiences do |t|
       t.string :name
-      t.string :description
+      t.text :description
 
       # Is it something that can be obtained, and then lost?
       t.boolean :is_persistent
+      # For things like Male / Female or what location a person is in
+      t.boolean :is_children_mutually_exclusive
       # Lasts for a duration, such as incarceration or application processing time?
       # (If nil then goes on until deactivated)
       t.integer :num_days

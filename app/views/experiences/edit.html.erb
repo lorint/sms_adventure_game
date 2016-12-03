@@ -1,6 +1,6 @@
 <h1>Editing Experience</h1>
 <%= form_for @experience do |f| %>
-	<%= render 'inner_form', {experience: @experience, f: f} %>
+	<%= render 'inner_form', {experiences: @root_experiences, f: f} %>
 <% end %>
 
 <%= link_to 'Show', @experience %> |

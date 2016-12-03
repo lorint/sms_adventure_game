@@ -2,7 +2,7 @@
 <ul>
 <% experiences.order(:name).each do |experience| %>
 	<li>
-		<%= f.radio_button :parent_id, experience.id %><%= link_to experience, edit_experience_path(experience) %>
+		<%= f.radio_button :parent_id, experience.id %><span<%= ' class="mutually_exclusive"'.html_safe if !experience.parent.nil? && experience.parent.is_children_mutually_exclusive %>><%= link_to experience, edit_experience_path(experience) %></span>
 		<%= render "experiences", {experiences: experience.children, f: f} %>
 	</li>
 <% end %>

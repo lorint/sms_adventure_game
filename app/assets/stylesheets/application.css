@@ -17,3 +17,11 @@
 ul {
 	margin: 0;
 }
+
+#experience_name {
+	width: 300px;
+}
+
+.mutually_exclusive {
+	background-color: yellow;
+}
