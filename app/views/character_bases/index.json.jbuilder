@@ -1,0 +1,1 @@
+json.array! @character_bases, partial: 'character_bases/character_basis', as: :character_basis

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @character.user %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @character.name %>
+</p>
+
+<p>
+  <strong>Money:</strong>
+  <%= @character.money %>
+</p>
+
+<p>
+  <strong>Fear:</strong>
+  <%= @character.fear %>
+</p>
+
+<p>
+  <strong>Health:</strong>
+  <%= @character.health %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @character.age %>
+</p>
+
+<p>
+  <strong>Chutzpah:</strong>
+  <%= @character.chutzpah %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @character.location %>
+</p>
+
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @experience_predecessor.experience %>
+</p>
+
+<p>
+  <strong>Previous experience:</strong>
+  <%= @experience_predecessor.previous_experience %>
+</p>
+
+<p>
+  <strong>Likelihood change:</strong>
+  <%= @experience_predecessor.likelihood_change %>
+</p>
+
+<%= link_to 'Edit', edit_experience_predecessor_path(@experience_predecessor) %> |
+<%= link_to 'Back', experience_predecessors_path %>

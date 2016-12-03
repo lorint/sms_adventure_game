@@ -1,0 +1,32 @@
+<%= form_for(experience_predecessor) do |f| %>
+  <% if experience_predecessor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(experience_predecessor.errors.count, "error") %> prohibited this experience_predecessor from being saved:</h2>
+
+      <ul>
+      <% experience_predecessor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :experience_id %>
+    <%= f.text_field :experience_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :previous_experience_id %>
+    <%= f.text_field :previous_experience_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :likelihood_change %>
+    <%= f.number_field :likelihood_change %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

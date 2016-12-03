@@ -1,0 +1,1 @@
+json.partial! "experience_removals/experience_removal", experience_removal: @experience_removal

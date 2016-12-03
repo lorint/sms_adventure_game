@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nickname:</strong>
+  <%= @character_basis.nickname %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @character_basis.description %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @character_basis.gender %>
+</p>
+
+<p>
+  <strong>Starting money:</strong>
+  <%= @character_basis.starting_money %>
+</p>
+
+<p>
+  <strong>Starting fear:</strong>
+  <%= @character_basis.starting_fear %>
+</p>
+
+<p>
+  <strong>Starting health:</strong>
+  <%= @character_basis.starting_health %>
+</p>
+
+<p>
+  <strong>Starting age:</strong>
+  <%= @character_basis.starting_age %>
+</p>
+
+<p>
+  <strong>Starting chutzpah:</strong>
+  <%= @character_basis.starting_chutzpah %>
+</p>
+
+<%= link_to 'Edit', edit_character_basis_path(@character_basis) %> |
+<%= link_to 'Back', character_bases_path %>

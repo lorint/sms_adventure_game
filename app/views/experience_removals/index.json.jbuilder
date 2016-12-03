@@ -1,0 +1,1 @@
+json.array! @experience_removals, partial: 'experience_removals/experience_removal', as: :experience_removal

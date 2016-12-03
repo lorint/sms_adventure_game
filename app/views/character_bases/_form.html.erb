@@ -1,0 +1,57 @@
+<%= form_for(character_basis) do |f| %>
+  <% if character_basis.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(character_basis.errors.count, "error") %> prohibited this character_basis from being saved:</h2>
+
+      <ul>
+      <% character_basis.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= f.label :starting_money %>
+    <%= f.number_field :starting_money %>
+  </div>
+
+  <div class="field">
+    <%= f.label :starting_fear %>
+    <%= f.number_field :starting_fear %>
+  </div>
+
+  <div class="field">
+    <%= f.label :starting_health %>
+    <%= f.number_field :starting_health %>
+  </div>
+
+  <div class="field">
+    <%= f.label :starting_age %>
+    <%= f.number_field :starting_age %>
+  </div>
+
+  <div class="field">
+    <%= f.label :starting_chutzpah %>
+    <%= f.number_field :starting_chutzpah %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

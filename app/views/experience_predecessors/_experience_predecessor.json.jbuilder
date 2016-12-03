@@ -1,0 +1,2 @@
+json.extract! experience_predecessor, :id, :experience_id, :previous_experience_id, :likelihood_change, :created_at, :updated_at
+json.url experience_predecessor_url(experience_predecessor, format: :json)

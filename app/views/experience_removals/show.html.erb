@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @experience_removal.experience %>
+</p>
+
+<p>
+  <strong>Removed experience:</strong>
+  <%= @experience_removal.removed_experience %>
+</p>
+
+<p>
+  <strong>Likelihood:</strong>
+  <%= @experience_removal.likelihood %>
+</p>
+
+<%= link_to 'Edit', edit_experience_removal_path(@experience_removal) %> |
+<%= link_to 'Back', experience_removals_path %>

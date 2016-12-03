@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Experiences</h1>
+
+<!--table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Money cost</th>
+      <th>Health cost</th>
+      <th>Fear change</th>
+      <th>Chutzpah change</th>
+      <th>Desire to uk change</th>
+      <th>Location upgrade amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @experiences.each do |experience| %>
+      <tr>
+        <td><%= experience.name %></td>
+        <td><%#= experience.money_cost %></td>
+        <td><%#= experience.health_cost %></td>
+        <td><%#= experience.fear_change %></td>
+        <td><%#= experience.chutzpah_change %></td>
+        <td><%#= experience.desire_to_uk_change %></td>
+        <td><%= experience.location_upgrade_amount %></td>
+        <td><%= link_to 'Show', experience %></td>
+        <td><%= link_to 'Edit', edit_experience_path(experience) %></td>
+        <td><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table-->
+
+<br>
+<%= form_for @experience do |f| %>
+  <%= render "inner_form", {experiences: @root_experiences, f: f} %>
+<% end %>

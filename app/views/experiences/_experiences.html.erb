@@ -1,0 +1,10 @@
+<% if experiences.count > 0 %>
+<ul>
+<% experiences.order(:name).each do |experience| %>
+	<li>
+		<%= f.radio_button :parent_id, experience.id %><%= link_to experience, edit_experience_path(experience) %>
+		<%= render "experiences", {experiences: experience.children, f: f} %>
+	</li>
+<% end %>
+</ul>
+<% end %>

@@ -1,0 +1,2 @@
+json.extract! experience, :id, :name, :money_cost, :health_cost, :fear_change, :chutzpah_change, :desire_to_uk_change, :location_upgrade_amount, :created_at, :updated_at
+json.url experience_url(experience, format: :json)

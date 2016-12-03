@@ -1,0 +1,2 @@
+json.extract! character_basis, :id, :nickname, :description, :gender, :starting_money, :starting_fear, :starting_health, :starting_age, :starting_chutzpah, :created_at, :updated_at
+json.url character_basis_url(character_basis, format: :json)

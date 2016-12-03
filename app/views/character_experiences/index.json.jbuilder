@@ -1,0 +1,1 @@
+json.array! @character_experiences, partial: 'character_experiences/character_experience', as: :character_experience

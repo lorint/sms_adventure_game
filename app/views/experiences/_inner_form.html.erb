@@ -1,0 +1,30 @@
+<% if f.object.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(f.object.errors.count, "error") %> prohibited this experience from being saved:</h2>
+
+    <ul>
+    <% f.object.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= f.radio_button :parent_id, -1 %>Root!<br />
+<%= render "experiences", {experiences: experiences, f: f} %>
+<br>
+Choose the parent you'd like your new <b>Experience</b> to have, and then:<br>
+Name: <%= f.text_field :name %><br>
+<%= f.check_box :is_persistent %>Is persistent (lasts for awhile, like getting a job or going to jail)<br>
+<table>
+  <tr>
+    <th></th><th>Change</th><th>Range</th>
+  </tr>
+  <tr>
+  <td>Money:</td><td><%= f.number_field :money_change, value: 0 %></td><td><%= f.number_field :min_money, value: 0 %> - <%= f.number_field :max_money, value: 1000 %></td></tr>
+  <tr><td>Health:</td><td><%= f.number_field :health_change, value: 0 %></td><td><%= f.number_field :min_health, value: 0 %> - <%= f.number_field :max_health, value: 1000 %></td></tr>
+  <tr><td>Happiness:</td><td><%= f.number_field :happiness_change, value: 0 %></td><td><%= f.number_field :min_happiness, value: 0 %> - <%= f.number_field :max_happiness, value: 1000 %></td></tr>
+  <tr><td>Got Game:</td><td><%= f.number_field :got_game_change, value: 0 %></td><td><%= f.number_field :min_got_game, value: 0 %> - <%= f.number_field :max_got_game, value: 1000 %></td>
+  </tr>
+</table>
+<%= f.submit %>

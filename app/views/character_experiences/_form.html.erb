@@ -1,0 +1,32 @@
+<%= form_for(character_experience) do |f| %>
+  <% if character_experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(character_experience.errors.count, "error") %> prohibited this character_experience from being saved:</h2>
+
+      <ul>
+      <% character_experience.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :experience_id %>
+    <%= f.text_field :experience_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :character_id %>
+    <%= f.text_field :character_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instigator_id %>
+    <%= f.text_field :instigator_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

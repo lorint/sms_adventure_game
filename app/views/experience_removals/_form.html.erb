@@ -1,0 +1,32 @@
+<%= form_for(experience_removal) do |f| %>
+  <% if experience_removal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(experience_removal.errors.count, "error") %> prohibited this experience_removal from being saved:</h2>
+
+      <ul>
+      <% experience_removal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :experience_id %>
+    <%= f.text_field :experience_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :removed_experience_id %>
+    <%= f.text_field :removed_experience_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :likelihood %>
+    <%= f.number_field :likelihood %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

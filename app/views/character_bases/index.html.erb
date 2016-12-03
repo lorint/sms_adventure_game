@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Character Bases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nickname</th>
+      <th>Description</th>
+      <th>Gender</th>
+      <th>Starting money</th>
+      <th>Starting fear</th>
+      <th>Starting health</th>
+      <th>Starting age</th>
+      <th>Starting chutzpah</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @character_bases.each do |character_basis| %>
+      <tr>
+        <td><%= character_basis.nickname %></td>
+        <td><%= character_basis.description %></td>
+        <td><%= character_basis.gender %></td>
+        <td><%= character_basis.starting_money %></td>
+        <td><%= character_basis.starting_fear %></td>
+        <td><%= character_basis.starting_health %></td>
+        <td><%= character_basis.starting_age %></td>
+        <td><%= character_basis.starting_chutzpah %></td>
+        <td><%= link_to 'Show', character_basis %></td>
+        <td><%= link_to 'Edit', edit_character_basis_path(character_basis) %></td>
+        <td><%= link_to 'Destroy', character_basis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Character Basis', new_character_basis_path %>

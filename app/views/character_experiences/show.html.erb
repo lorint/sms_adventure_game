@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @character_experience.experience %>
+</p>
+
+<p>
+  <strong>Character:</strong>
+  <%= @character_experience.character %>
+</p>
+
+<p>
+  <strong>Instigator:</strong>
+  <%= @character_experience.instigator %>
+</p>
+
+<%= link_to 'Edit', edit_character_experience_path(@character_experience) %> |
+<%= link_to 'Back', character_experiences_path %>
