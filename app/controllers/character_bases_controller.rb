@@ -42,7 +42,7 @@ class CharacterBasesController < ApplicationController
   def update
     respond_to do |format|
       if @character_basis.update(character_basis_params)
-        format.html { redirect_to @character_basis, notice: 'Character base was successfully updated.' }
+        format.html { redirect_to @character_basis, notice: 'Character base was successfully updated.' ✓ }
         format.json { render :show, status: :ok, location: @character_basis }
       else
         format.html { render :edit }

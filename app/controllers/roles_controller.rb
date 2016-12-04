@@ -42,7 +42,7 @@ class RolesController < ApplicationController
   def update
     respond_to do |format|
       if @role.update(role_params)
-        format.html { redirect_to @role, notice: 'Role was successfully updated.' }
+        format.html { redirect_to @role, notice: 'Role was successfully updated. ✓' }
         format.json { render :show, status: :ok, location: @role }
       else
         format.html { render :edit }

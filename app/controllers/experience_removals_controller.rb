@@ -28,7 +28,7 @@ class ExperienceRemovalsController < ApplicationController
 
     respond_to do |format|
       if @experience_removal.save
-        format.html { redirect_to @experience_removal, notice: 'Experience removal was successfully created.' }
+        format.html { redirect_to @experience_removal, notice: 'Experience removal was successfully created. ✓' }
         format.json { render :show, status: :created, location: @experience_removal }
       else
         format.html { render :new }

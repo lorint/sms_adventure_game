@@ -28,7 +28,7 @@ class CurrenciesController < ApplicationController
 
     respond_to do |format|
       if @currency.save
-        format.html { redirect_to @currency, notice: 'Currency was successfully created.' }
+        format.html { redirect_to @currency, notice: 'Currency was successfully created. ✓' }
         format.json { render :show, status: :created, location: @currency }
       else
         format.html { render :new }
