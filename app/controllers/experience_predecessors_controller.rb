@@ -28,7 +28,7 @@ class ExperiencePredecessorsController < ApplicationController
 
     respond_to do |format|
       if @experience_predecessor.save
-        format.html { redirect_to @experience_predecessor, notice: 'Experience predecessor was successfully created.' }
+        format.html { redirect_to @experience_predecessor, notice: 'Experience predecessor was successfully created. ✓' }
         format.json { render :show, status: :created, location: @experience_predecessor }
       else
         format.html { render :new }

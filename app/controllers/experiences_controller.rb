@@ -27,7 +27,7 @@ class ExperiencesController < ApplicationController
 
     respond_to do |format|
       if @experience.save
-        format.html { redirect_to experiences_path(parent_id: @experience.parent_id), notice: 'Experience was successfully created.' }
+        format.html { redirect_to experiences_path(parent_id: @experience.parent_id), notice: 'Experience was successfully created. ✓' }
         format.json { render :show, status: :created, location: @experience }
       else
         format.html { render :new }
