@@ -14,17 +14,79 @@
  *= require_self
  */
 
+ ul {
+   margin: 0;
+ }
+
+ #experience_name {
+   width: 100%;
+ }
+
+ .mutually_exclusive {
+   background-color: yellow;
+ }
+
+ body {
+  background-color: #AAAAAA;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+  background-image: url("/images/sayagata-400px.png");
+  background-repeat: repeat;
+}
+
+h1 {
+  text-shadow: 1px 1px 1px gray;
+}
+
 ul {
 	margin: 0;
 	list-style: none;
 }
 
-#experience_name {
-	width: 300px;
+input {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius:10px;
 }
 
-.mutually_exclusive {
-	background-color: yellow;
+
+textarea {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+
+}
+
+#notice {
+  background-color: yellow;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius:10px;
+}
+
+
+input[type="button"] {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+a, a:visited {
+  text-decoration: none;
 }
 
 a.experiencePredecessor {
