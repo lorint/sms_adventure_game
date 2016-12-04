@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body<%= 'class="predecessor"'.html_safe if controller_name == 'experience_predecessors' %>
+  <body <%= 'class="predecessor"'.html_safe if controller_name == 'experience_predecessors' %>
 >
     <%= yield %>
   </body>

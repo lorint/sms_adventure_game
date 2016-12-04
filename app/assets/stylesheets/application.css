@@ -26,6 +26,14 @@
    background-color: yellow;
  }
 
+body.predecessor{
+  background-image: url("/images/pred.png");
+
+
+}
+
+
+
  body {
   background-color: #AAAAAA;
   color: #333;
