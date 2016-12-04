@@ -31,7 +31,7 @@ class ExperiencePredecessorsController < ApplicationController
         format.html { redirect_to experiences_path, notice: 'Experience predecessor was successfully created. ✓' }
         format.json { render :show, status: :created, location: @experience_predecessor }
       else
-        format.html { render :new }
+        format.html { redirect_to new_experience_experience_predecessor_path(@experience) }
         format.json { render json: @experience_predecessor.errors, status: :unprocessable_entity }
       end
     end
@@ -45,7 +45,7 @@ class ExperiencePredecessorsController < ApplicationController
         format.html { redirect_to experiences_path, notice: 'Experience predecessor was successfully updated.' }
         format.json { render :show, status: :ok, location: @experience_predecessor }
       else
-        format.html { render :edit }
+        format.html { redirect_to edit_experience_predecessor_path(@experience_predecessor) }
         format.json { render json: @experience_predecessor.errors, status: :unprocessable_entity }
       end
     end
@@ -56,7 +56,7 @@ class ExperiencePredecessorsController < ApplicationController
   def destroy
     @experience_predecessor.destroy
     respond_to do |format|
-      format.html { redirect_to experience_predecessors_url, notice: 'Experience predecessor was successfully destroyed.' }
+      format.html { redirect_to experiences_path, notice: 'Experience predecessor was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

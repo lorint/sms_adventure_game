@@ -32,3 +32,7 @@ a.experiencePredecessor {
 	border: 2px solid #005000;
 	color: white;
 }
+
+.addPredecessor {
+	font-size: 0.6em;
+}

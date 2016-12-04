@@ -12,12 +12,14 @@
 				<%= f.radio_button radio_button_sym, experience.id %>
 			<% end %>
 		<% end %><span<%= ' class="mutually_exclusive"'.html_safe if !experience.parent.nil? && experience.parent.is_children_mutually_exclusive %>><%= link_to experience, edit_experience_path(experience) %></span>
-		<% experience.experience_predecessors.each do |ep| %>
-		  <%= # EXPERIENCE PREDECESSOR
-	      link_to ep.driving_experience_ids.map(&:to_s).join(", "), edit_experience_predecessor_path(ep.id), {class: "experiencePredecessor"} %>
+		<% if controller_name != 'experience_predecessors' %>
+			<% experience.experience_predecessors.each do |ep| %>
+			  <%= # EXPERIENCE PREDECESSOR
+		      link_to ep.driving_experience_ids.map(&:to_s).join(", "), edit_experience_predecessor_path(ep.id), {class: "experiencePredecessor", title: ep.driving_experiences.map(&:name).join(", ")} %>
+		  <% end %>
+		  <%= # ADD EXPERIENCE PREDECESSOR
+		      link_to("Add Predecessor", new_experience_experience_predecessor_path(experience_id: experience.id), {class: "addPredecessor"}) unless experience.id.nil? %>
 	  <% end %>
-	  <%= # ADD EXPERIENCE PREDECESSOR
-	      link_to "Add Predecessor", new_experience_experience_predecessor_path(experience_id: experience.id) unless experience.id.nil? %>
 
 		<%= render "experiences/experiences", {experiences: experience.children, f: f, is_selected_branch: is_selected_branch, selected_experiences: selected_experiences, radio_button_sym: radio_button_sym} %>
 	</li>

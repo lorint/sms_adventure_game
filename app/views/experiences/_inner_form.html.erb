@@ -11,15 +11,12 @@
 <% end %>
 
 Choose the parent you'd like <%= f.object.new_record? ? "your new" : "the" %> <b>Experience</b> to have:<br>
-<%= f.radio_button :parent_id, -1 %>Root!<br />
+<%= f.radio_button :parent_id, -1, {checked: f.object.parent_id.nil?} %>Root!<br />
 <%= render "experiences", {experiences: experiences, f: f,
     is_selected_branch: false,
     radio_button_sym: :parent_id,
     selected_experiences: nil} %>
 
-<% unless f.object.new_record? %>
-  <%= button_to "Delete!", f.object, method: :delete, confirm: "Are you sure you don't like #{f.object.name}?" %>
-<% end %>
 <br>
 
 Name: <%= f.text_field :name %><br>
@@ -38,3 +35,8 @@ Name: <%= f.text_field :name %><br>
   </tr>
 </table>
 <%= f.submit %>
+<br>
+<br>
+<% unless f.object.new_record? %>
+  <%= link_to "Delete!", f.object, method: :delete, data: {confirm: "Are you sure you don't like #{f.object.name}?"} %>
+<% end %>

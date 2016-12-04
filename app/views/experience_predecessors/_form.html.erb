@@ -43,3 +43,7 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<% unless @experience_predecessor.new_record? %>
+  <%= button_to "Delete!", @experience_predecessor, method: :delete, data: {confirm: "Are you sure you want to delete this precedence?"} %>
+<% end %>
