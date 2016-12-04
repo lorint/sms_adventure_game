@@ -1,7 +1,8 @@
-<h1>Editing Experience</h1>
+<h1>Editing <%= @experience.name %></h1>
 <%= form_for @experience do |f| %>
-	<%= render 'inner_form', {experiences: @root_experiences, f: f} %>
+	<%= render 'inner_form', {experiences: @root_experiences, f: f,
+	    radio_button_sym: :parent_id,
+	    selected_experiences: nil} %>
 <% end %>
 
-<%= link_to 'Show', @experience %> |
 <%= link_to 'Back', experiences_path %>

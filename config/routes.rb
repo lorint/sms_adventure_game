@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   resources :character_experiences
   resources :experience_removals
   root "characters#show"
-  resources :experience_predecessors
-  resources :experiences
+  resources :experiences do
+    resources :experience_predecessors, shallow: true
+  end
   resources :locations
   resources :currencies
   resource :characters

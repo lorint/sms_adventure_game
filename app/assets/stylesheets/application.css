@@ -37,7 +37,13 @@
   background-repeat: repeat;
 }
 
-h1 { text-shadow: 1px 1px 1px gray; 
+h1 {
+  text-shadow: 1px 1px 1px gray;
+}
+
+ul {
+	margin: 0;
+	list-style: none;
 }
 
 input {
@@ -81,4 +87,10 @@ input[type="button"] {
 
 a, a:visited {
   text-decoration: none;
+}
+
+a.experiencePredecessor {
+	background-color: green;
+	border: 2px solid #005000;
+	color: white;
 }
