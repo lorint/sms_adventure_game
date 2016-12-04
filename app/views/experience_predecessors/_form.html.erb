@@ -1,30 +1,43 @@
-<%= form_for(experience_predecessor) do |f| %>
-  <% if experience_predecessor.errors.any? %>
+<%= form_for(@experience_predecessor.new_record? ?
+      [@experience, @experience_predecessor]
+        :
+      @experience_predecessor) do |f| %>
+  <% if @experience_predecessor.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(experience_predecessor.errors.count, "error") %> prohibited this experience_predecessor from being saved:</h2>
+      <h2><%= pluralize(@experience_predecessor.errors.count, "error") %> prohibited this experience_predecessor from being saved:</h2>
 
       <ul>
-      <% experience_predecessor.errors.full_messages.each do |message| %>
+      <% @experience_predecessor.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
+  Fire off this experience:
+  <%= render "experiences/experiences", {experiences: @root_experiences, f: f,
+      is_selected_branch: false,
+      selected_experiences: nil,
+      radio_button_sym: :experience_id} %>
+  <br>
+  When all of these are present:
+  <%= hidden_field_tag "experience_predecessor[driving_experience_ids][]", "" %>
+  <%= render "experiences/experiences", {experiences: @root_experiences, f: f,
+      is_selected_branch: false,
+      selected_experiences: @selected_experiences,
+      radio_button_sym: nil} %>
+  <br>
+  With this likelihood:<br>
+  (<span id="involuntary">100000</span> to make it involuntary)
   <div class="field">
-    <%= f.label :experience_id %>
-    <%= f.text_field :experience_id %>
+    <%= f.label :likelihood %>
+    <%= f.number_field :likelihood %>
   </div>
 
-  <div class="field">
-    <%= f.label :previous_experience_id %>
-    <%= f.text_field :previous_experience_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :likelihood_change %>
-    <%= f.number_field :likelihood_change %>
-  </div>
+  <script>
+    $("#involuntary").on("click", function () {
+      $("#experience_predecessor_likelihood").val(this.innerHTML);
+    });
+  </script>
 
   <div class="actions">
     <%= f.submit %>

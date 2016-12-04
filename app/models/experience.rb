@@ -9,6 +9,10 @@ class Experience < ApplicationRecord
 
   has_many :experience_predecessors
   has_many :experience_predecessor_drivers, through: :experience_predecessors
+
+  has_many :driving_experiences, class_name: "ExperiencePredecessorDriver",
+    foreign_key: :driving_experience_id, inverse_of: :driving_experience
+
   # has_many :predecessors, class_name: "Experience", inverse_of: :successors
   # has_many :experience_successors, class_name: "ExperiencePredecessor", foreign_key: :experience_predecessor_id
   # has_many :successors, class_name: "Experience", inverse_of: :predecessors

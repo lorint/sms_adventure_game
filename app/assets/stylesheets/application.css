@@ -16,6 +16,7 @@
 
 ul {
 	margin: 0;
+	list-style: none;
 }
 
 #experience_name {
@@ -24,4 +25,10 @@ ul {
 
 .mutually_exclusive {
 	background-color: yellow;
+}
+
+a.experiencePredecessor {
+	background-color: green;
+	border: 2px solid #005000;
+	color: white;
 }

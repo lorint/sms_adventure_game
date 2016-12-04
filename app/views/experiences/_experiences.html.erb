@@ -1,9 +1,25 @@
 <% if experiences.count > 0 %>
 <ul>
-<% experiences.order(:name).each do |experience| %>
+<% experiences.order(:name).includes(:experience_predecessors).each do |experience|
+   is_selected_branch = true if selected_experiences.nil? && experience.id == f.object.id && radio_button_sym != :experience_id %>
 	<li>
-		<%= f.radio_button :parent_id, experience.id %><span<%= ' class="mutually_exclusive"'.html_safe if !experience.parent.nil? && experience.parent.is_children_mutually_exclusive %>><%= link_to experience, edit_experience_path(experience) %></span>
-		<%= render "experiences", {experiences: experience.children, f: f} %>
+		<% if is_selected_branch %>
+		  &nbsp; &nbsp;
+		<% else %>
+			<% if selected_experiences %>
+				<%= check_box_tag "experience_predecessor[driving_experience_ids][]",experience.id, selected_experiences.include?(experience.id) %>
+			<% else %>
+				<%= f.radio_button radio_button_sym, experience.id %>
+			<% end %>
+		<% end %><span<%= ' class="mutually_exclusive"'.html_safe if !experience.parent.nil? && experience.parent.is_children_mutually_exclusive %>><%= link_to experience, edit_experience_path(experience) %></span>
+		<% experience.experience_predecessors.each do |ep| %>
+		  <%= # EXPERIENCE PREDECESSOR
+	      link_to ep.driving_experience_ids.map(&:to_s).join(", "), edit_experience_predecessor_path(ep.id), {class: "experiencePredecessor"} %>
+	  <% end %>
+	  <%= # ADD EXPERIENCE PREDECESSOR
+	      link_to "Add Predecessor", new_experience_experience_predecessor_path(experience_id: experience.id) unless experience.id.nil? %>
+
+		<%= render "experiences/experiences", {experiences: experience.children, f: f, is_selected_branch: is_selected_branch, selected_experiences: selected_experiences, radio_button_sym: radio_button_sym} %>
 	</li>
 <% end %>
 </ul>

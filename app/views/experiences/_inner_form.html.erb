@@ -10,10 +10,18 @@
   </div>
 <% end %>
 
+Choose the parent you'd like <%= f.object.new_record? ? "your new" : "the" %> <b>Experience</b> to have:<br>
 <%= f.radio_button :parent_id, -1 %>Root!<br />
-<%= render "experiences", {experiences: experiences, f: f} %>
+<%= render "experiences", {experiences: experiences, f: f,
+    is_selected_branch: false,
+    radio_button_sym: :parent_id,
+    selected_experiences: nil} %>
+
+<% unless f.object.new_record? %>
+  <%= button_to "Delete!", f.object, method: :delete, confirm: "Are you sure you don't like #{f.object.name}?" %>
+<% end %>
 <br>
-Choose the parent you'd like your new <b>Experience</b> to have, and then:<br>
+
 Name: <%= f.text_field :name %><br>
 <%= f.text_area :description, {rows: 10, cols: 100} %><br>
 <%= f.check_box :is_persistent %>Is persistent (lasts for awhile, like getting a job or going to jail)<br>

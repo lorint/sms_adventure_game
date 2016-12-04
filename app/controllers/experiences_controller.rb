@@ -27,6 +27,7 @@ class ExperiencesController < ApplicationController
 
     respond_to do |format|
       if @experience.save
+
         format.html { redirect_to experiences_path(parent_id: @experience.parent_id), notice: 'Experience was successfully created.' }
         format.json { render :show, status: :created, location: @experience }
       else
@@ -67,12 +68,12 @@ class ExperiencesController < ApplicationController
     end
 
     def set_root_experiences
-      @root_experiences = Experience.where(parent: nil).order(:name)
+      @root_experiences = Experience.where(parent: nil).order(:name).includes(:experience_predecessors)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
-      params.require(:experience).permit(:name, :description, :is_children_mutually_exclusive, :parent_id, :money_change, :health_change, :happiness_change, :got_game_change,
+      params.require(:experience).permit(:name, :description, :likelihood, :is_children_mutually_exclusive, :parent_id, :money_change, :health_change, :happiness_change, :got_game_change,
         :min_money, :max_money,
         :min_health, :max_health,
         :min_happiness, :max_happiness,
